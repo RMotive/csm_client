@@ -25,7 +25,7 @@ abstract interface class CSMServiceInterface {
   /// [input] - The request structured object that stores all the required data by the [act].
   ///
   /// [headers] - Optional headers to be sent to the calculated [act] network location.
-  Future<CSMActEffect> post<S, E, M extends CSMModel<M>>(
+  Future<CSMActEffect> post<S, E, M extends CSMEncodedModel<M>>(
     String act,
     M input, {
     CSMHeaders? headers,

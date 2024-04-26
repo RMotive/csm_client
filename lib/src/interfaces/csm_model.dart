@@ -1,6 +1,5 @@
 import 'package:csm_foundation_services/csm_foundation_services.dart';
 
-abstract interface class CSMModel<TModel> {
+abstract interface class CSMEncodedModel<TModel> {
   JObject encode();
-  TModel decode(JObject json);
 }
