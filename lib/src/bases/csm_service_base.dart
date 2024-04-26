@@ -39,10 +39,17 @@ abstract class CSMServiceBase implements CSMServiceInterface {
   }) async {
     Uri uri = endpoint.resolve(endpoint: act);
     try {
+      JObject jObject;
+      try {
+        jObject = (Object as dynamic).encode();
+      } catch (x) {
+        throw 'EncodeException: unable to find method encode() that returns a JObject[Map<String, dynamic>]';
+      }
+
       final Response response = await comm.post(
         uri,
         headers: headers ?? _kHeaders,
-        body: jsonEncode(request),
+        body: jsonEncode(jObject),
       );
       final JObject parsedBody = jsonDecode(response.body);
       final int statusCode = response.statusCode;
