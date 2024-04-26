@@ -1,6 +1,6 @@
 name: csm_foundation_services
 description: A csm foundation package to services implementations.
-version: 2.0.1
+version: 2.0.2
 publish_to: none
 repository: https://github.com/my_org/my_repo
 
