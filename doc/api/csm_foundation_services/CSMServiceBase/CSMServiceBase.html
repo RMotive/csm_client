@@ -63,7 +63,8 @@
     <section class="multi-line-signature">
       
       <span class="name ">CSMServiceBase</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-host"><span class="type-annotation"><a href="../../csm_foundation_services/CSMUri-class.html">CSMUri</a></span> <span class="parameter-name">host</span>, </span></li>
-<li><span class="parameter" id="-param-servicePath"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.3.4/dart-core/String-class.html">String</a></span> <span class="parameter-name">servicePath</span></span></li>
+<li><span class="parameter" id="-param-servicePath"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.3.4/dart-core/String-class.html">String</a></span> <span class="parameter-name">servicePath</span>, </span></li>
+<li><span class="parameter" id="-param-client">{<span class="type-annotation"><a href="https://pub.dev/documentation/http/1.2.1/http/Client-class.html">Client</a>?</span> <span class="parameter-name">client</span>}</span></li>
 </ol>)
     </section>
 
@@ -76,9 +77,13 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">CSMServiceBase(CSMUri host, String servicePath) {
+  <pre class="language-dart"><code class="language-dart">CSMServiceBase(
+  CSMUri host,
+  String servicePath, {
+  Client? client,
+}) {
   endpoint = CSMUri.includeEndpoint(host, servicePath);
-  comm = Client();
+  comm = client ?? Client();
 }</code></pre>
 </section>
 
@@ -113,7 +118,7 @@
 <footer>
   <span class="no-break">
     csm_foundation_services
-      2.0.3
+      3.1.3
   </span>
 
   

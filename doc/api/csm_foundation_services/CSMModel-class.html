@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the CSMServiceResolverBase class from the csm_foundation_services library, for the Dart programming language.">
-  <title>CSMServiceResolverBase class - csm_foundation_services library - Dart API</title>
+  <meta name="description" content="API docs for the CSMModel class from the csm_foundation_services library, for the Dart programming language.">
+  <title>CSMModel class - csm_foundation_services library - Dart API</title>
 
 
   
@@ -30,9 +30,9 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">csm_foundation_services</a></li>
     <li><a href="../csm_foundation_services/csm_foundation_services-library.html">csm_foundation_services.dart</a></li>
-    <li class="self-crumb">CSMServiceResolverBase<span class="signature">&lt;<wbr><span class="type-parameter">TSuccess</span>&gt;</span> class</li>
+    <li class="self-crumb">CSMModel<span class="signature">&lt;<wbr><span class="type-parameter">TModel</span>&gt;</span> class</li>
   </ol>
-  <div class="self-name">CSMServiceResolverBase</div>
+  <div class="self-name">CSMModel</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -54,60 +54,33 @@
       id="dartdoc-main-content"
       class="main-content"
       data-above-sidebar="csm_foundation_services&#47;csm_foundation_services-library-sidebar.html"
-      data-below-sidebar="csm_foundation_services&#47;CSMServiceResolverBase-class-sidebar.html">
+      data-below-sidebar="csm_foundation_services&#47;CSMModel-class-sidebar.html">
       <div>
-<h1><span class="kind-class">CSMServiceResolverBase&lt;<wbr><span class="type-parameter">TSuccess</span>&gt;</span> class 
+<h1><span class="kind-class">CSMModel&lt;<wbr><span class="type-parameter">TModel</span>&gt;</span> class 
     <a href="https://dart.dev/language/class-modifiers#abstract" class="feature feature-abstract" title="This type can not be directly constructed.">abstract</a>
+    <a href="https://dart.dev/language/class-modifiers#interface" class="feature feature-interface" title="This class can only be implemented (not extended or mixed in).">interface</a>
  
 </h1></div>
 
     
-<section class="desc markdown">
-  <p>Base for <code>CSMServiceResolver</code>.</p>
-<p>Defines base behavrior for a <code>CSMServiceResolver</code> impolementation.</p>
-<p><code>TSuccess</code> - Defines the generic reflected type of the <code>Success</code> object that will be created when the <code>ActEffect</code> is resolved successfuly.</p>
-<p><code>CSMServiceResolver</code> concept: custom resolvers for each service implemented, used to simplify the objects factory and the
-resolution of services responses.</p>
-</section>
 
 
-    <section>
-      <dl class="dl-horizontal">
-        
-
-        
-  <dt>Implemented types</dt>
-  <dd>
-    <ul class="comma-separated clazz-relationships">
-        <li><a href="../csm_foundation_services/CSMServiceResolverInterface-class.html">CSMServiceResolverInterface</a><span class="signature">&lt;<wbr><span class="type-parameter">TSuccess</span>&gt;</span></li>
-    </ul>
-  </dd>
-        
-
-
-
-        
-
-
-      </dl>
-    </section>
 
     
   <section class="summary offset-anchor" id="constructors">
     <h2>Constructors</h2>
 
     <dl class="constructor-summary-list">
-        <dt id="CSMServiceResolverBase" class="callable">
-          <span class="name"><a href="../csm_foundation_services/CSMServiceResolverBase/CSMServiceResolverBase.html">CSMServiceResolverBase</a></span><span class="signature">(<span class="parameter" id="-param-result"><span class="type-annotation"><a href="../csm_foundation_services/CSMActEffect-class.html">CSMActEffect</a></span> <span class="parameter-name">result</span></span>)</span>
+        <dt id="CSMModel" class="callable">
+          <span class="name"><a href="../csm_foundation_services/CSMModel/CSMModel.html">CSMModel</a></span><span class="signature">()</span>
         </dt>
         <dd>
-          Generates a new <a href="../csm_foundation_services/CSMServiceResolverBase-class.html">CSMServiceResolverBase</a> behavior handler.
-            <div class="constructor-modifier features">const</div>
+          
         </dd>
     </dl>
   </section>
 
-    <section class="summary offset-anchor" id="instance-properties">
+    <section class="summary offset-anchor inherited" id="instance-properties">
       <h2>Properties</h2>
 
       <dl class="properties">
@@ -119,17 +92,6 @@ resolution of services responses.</p>
 <dd class="inherited">
   The hash code for this object.
   <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
-
-</dd>
-
-        <dt id="result" class="property">
-  <span class="name"><a href="../csm_foundation_services/CSMServiceResolverBase/result.html">result</a></span>
-  <span class="signature">&#8594; <a href="../csm_foundation_services/CSMActEffect-class.html">CSMActEffect</a></span> 
-
-</dt>
-<dd>
-  <code>act</code> network operation result from a <code>CSMService</code>.
-  <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
@@ -149,10 +111,36 @@ resolution of services responses.</p>
 
     
   <section
-      class="summary offset-anchor inherited"
+      class="summary offset-anchor"
       id="instance-methods">
     <h2>Methods</h2>
     <dl class="callables">
+        <dt id="decode" class="callable">
+  <span class="name"><a href="../csm_foundation_services/CSMModel/decode.html">decode</a></span><span class="signature">(<wbr><span class="parameter" id="decode-param-json"><span class="type-annotation"><a href="../csm_foundation_services/JObject.html">JObject</a></span> <span class="parameter-name">json</span></span>)
+    <span class="returntype parameter">&#8594; TModel</span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
+        <dt id="encode" class="callable">
+  <span class="name"><a href="../csm_foundation_services/CSMModel/encode.html">encode</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="../csm_foundation_services/JObject.html">JObject</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  
+  
+
+</dd>
+
         <dt id="noSuchMethod" class="callable inherited">
   <span class="name"><a href="https://api.dart.dev/stable/3.3.4/dart-core/Object/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.3.4/dart-core/Invocation-class.html">Invocation</a></span> <span class="parameter-name">invocation</span></span>)
     <span class="returntype parameter">&#8594; dynamic</span>
@@ -220,7 +208,7 @@ resolution of services responses.</p>
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../index.html">csm_foundation_services</a></li>
     <li><a href="../csm_foundation_services/csm_foundation_services-library.html">csm_foundation_services</a></li>
-    <li class="self-crumb">CSMServiceResolverBase<span class="signature">&lt;<wbr><span class="type-parameter">TSuccess</span>&gt;</span> class</li>
+    <li class="self-crumb">CSMModel<span class="signature">&lt;<wbr><span class="type-parameter">TModel</span>&gt;</span> class</li>
 </ol>
 
 

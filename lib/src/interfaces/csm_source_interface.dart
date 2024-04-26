@@ -1,4 +1,5 @@
 import 'package:csm_foundation_services/src/models/models_module.dart';
+import 'package:http/http.dart';
 
 /// Interface for [CSMRepository].
 ///
@@ -9,11 +10,14 @@ abstract interface class CSMSourceInterface {
   /// The current runtime calculated host.
   final CSMUri host;
 
-  /// Host when the runtime is on production.
-  final CSMUri? production;
-
   /// Host when the runtime in on development.
   final CSMUri development;
 
-  const CSMSourceInterface(this.host, this.production, this.development);
+  /// Host when the runtime is on production.
+  final CSMUri? production;
+
+  /// Custom communication client to use.
+  final Client? client;
+
+  const CSMSourceInterface(this.host, this.development, this.production, this.client);
 }
