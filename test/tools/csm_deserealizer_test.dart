@@ -1,5 +1,4 @@
 import 'package:csm_foundation_services/csm_foundation_services.dart';
-import 'package:csm_foundation_services/src/common/tools/csm_deserealizer.dart';
 import 'package:test/test.dart';
 
 void main() {
