@@ -36,7 +36,7 @@ abstract class CSMServiceBase implements CSMServiceInterface {
   }
 
   @override
-  Future<CSMActEffect> post<S, E, M extends CSMEncodedModel<M>>(
+  Future<CSMActEffect> post<S, E, M extends CSMEncodeInterface>(
     String act,
     M request, {
     CSMHeaders? headers,

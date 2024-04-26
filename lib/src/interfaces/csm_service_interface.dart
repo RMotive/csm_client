@@ -1,6 +1,6 @@
 import 'package:csm_foundation_services/src/common/common_module.dart';
 import 'package:csm_foundation_services/src/csm_act_effect.dart';
-import 'package:csm_foundation_services/src/interfaces/csm_model.dart';
+import 'package:csm_foundation_services/src/interfaces/csm_encode_interface.dart';
 import 'package:csm_foundation_services/src/models/models_module.dart';
 import 'package:http/http.dart';
 
@@ -25,7 +25,7 @@ abstract interface class CSMServiceInterface {
   /// [input] - The request structured object that stores all the required data by the [act].
   ///
   /// [headers] - Optional headers to be sent to the calculated [act] network location.
-  Future<CSMActEffect> post<S, E, M extends CSMEncodedModel<M>>(
+  Future<CSMActEffect> post<S, E, M extends CSMEncodeInterface>(
     String act,
     M input, {
     CSMHeaders? headers,
