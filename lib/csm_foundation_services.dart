@@ -3,6 +3,8 @@
 /// More dartdocs go here.
 library;
 
+export 'package:http/src/request.dart';
+export 'package:http/src/response.dart';
 export 'package:http/testing.dart';
 
 // --> Bases module
