@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:csm_foundation_services/src/common/common_module.dart';
 import 'package:csm_foundation_services/src/csm_act_effect.dart';
+import 'package:csm_foundation_services/src/interfaces/csm_model.dart';
 import 'package:csm_foundation_services/src/interfaces/interfaces_module.dart';
 import 'package:csm_foundation_services/src/models/models_module.dart';
 import 'package:http/http.dart';
@@ -32,20 +33,14 @@ abstract class CSMServiceBase implements CSMServiceInterface {
   }
 
   @override
-  Future<CSMActEffect> post<S, E>(
+  Future<CSMActEffect> post<S, E, M extends CSMModel<M>>(
     String act,
-    Object request, {
+    M request, {
     CSMHeaders? headers,
   }) async {
     Uri uri = endpoint.resolve(endpoint: act);
     try {
-      JObject jObject;
-      try {
-        jObject = (Object as dynamic).encode();
-      } catch (x) {
-        throw 'EncodeException: unable to find method encode() that returns a JObject[Map<String, dynamic>] on ($request)';
-      }
-
+      JObject jObject = request.encode();
       final Response response = await comm.post(
         uri,
         headers: headers ?? _kHeaders,
