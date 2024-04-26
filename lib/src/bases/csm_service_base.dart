@@ -4,7 +4,6 @@ import 'package:csm_foundation_services/src/common/common_module.dart';
 import 'package:csm_foundation_services/src/csm_act_effect.dart';
 import 'package:csm_foundation_services/src/interfaces/interfaces_module.dart';
 import 'package:csm_foundation_services/src/models/models_module.dart';
-import 'package:http/browser_client.dart';
 import 'package:http/http.dart';
 
 /// Base for [CSMService].
@@ -27,9 +26,9 @@ abstract class CSMServiceBase implements CSMServiceInterface {
   };
 
   /// Generates a new [CSMServiceBase] behavior handler.
-  CSMServiceBase(CSMUri host, String servicePath, bool webBase) {
+  CSMServiceBase(CSMUri host, String servicePath) {
     endpoint = CSMUri.includeEndpoint(host, servicePath);
-    comm = webBase ? BrowserClient() : Client();
+    comm = Client();
   }
 
   @override
