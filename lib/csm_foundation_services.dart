@@ -3,6 +3,8 @@
 /// More dartdocs go here.
 library;
 
+export 'package:http/testing.dart';
+
 // --> Bases module
 export 'src/bases/bases_module.dart';
 // --> Common module
