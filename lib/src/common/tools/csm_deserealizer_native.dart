@@ -5,7 +5,10 @@ import 'package:csm_foundation_services/csm_foundation_services.dart';
 /// Deserealizes the given generic class [T] based on its own [des] method, passing [json] object.
 ///
 /// Can throw [MirrorException].
-T deserealize<T>(JObject json) {
+T deserealize<T>(
+  JObject json, {
+  CSMDecodeInterface<T>? decode,
+}) {
   String factoryName = '$T.des';
   Symbol symbolReference = Symbol(factoryName);
   ClassMirror reflected = reflectClass(T);
