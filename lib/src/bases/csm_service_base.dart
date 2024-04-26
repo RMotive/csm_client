@@ -43,7 +43,7 @@ abstract class CSMServiceBase implements CSMServiceInterface {
       try {
         jObject = (Object as dynamic).encode();
       } catch (x) {
-        throw 'EncodeException: unable to find method encode() that returns a JObject[Map<String, dynamic>]';
+        throw 'EncodeException: unable to find method encode() that returns a JObject[Map<String, dynamic>] on ($request)';
       }
 
       final Response response = await comm.post(
