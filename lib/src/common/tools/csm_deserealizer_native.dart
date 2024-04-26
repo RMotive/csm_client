@@ -9,9 +9,9 @@ T deserealize<T>(
   JObject json, {
   CSMDecodeInterface<T>? decode,
 }) {
-  String factoryName = '$T.des';
-  Symbol symbolReference = Symbol(factoryName);
   ClassMirror reflected = reflectClass(T);
+  String factoryName = '${reflected.simpleName}.des';
+  Symbol symbolReference = Symbol(factoryName);
 
   DeclarationMirror? method = reflected.declarations[symbolReference];
   if (method is! MethodMirror || !(method.isFactoryConstructor)) {
