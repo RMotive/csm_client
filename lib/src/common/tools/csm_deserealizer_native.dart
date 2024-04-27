@@ -9,15 +9,26 @@ T deserealize<T>(
   JObject json, {
   CSMDecodeInterface<T>? decode,
 }) {
-  ClassMirror reflected = reflectClass(T);
-  String factoryName = '${reflected.simpleName}.des';
-  Symbol symbolReference = Symbol(factoryName);
+  const String excepScope = 'MirrorException';
 
-  DeclarationMirror? method = reflected.declarations[symbolReference];
+  ClassMirror reflected = reflectClass(T);
+  if (!reflected.hasReflectedType && decode == null) {
+    throw '$excepScope: Unsupported to deserealize generic classes, for them please provide $CSMDecodeInterface decode implementation';
+  }
+
+  if (!reflected.hasReflectedType && decode != null) {
+    return decode.decode(json);
+  }
+
+  String className = reflected.simpleName.toString().split('"')[1];
+  Symbol instanceFactory = Symbol('$className.des');
+
+  DeclarationMirror? method = reflected.declarations[instanceFactory];
   if (method is! MethodMirror || !(method.isFactoryConstructor)) {
-    throw 'MirrorException: Class $T must contain a factory method $factoryName(JObject json) where JObject = Map<String, dynamic>';
+    throw ': Class $T must contain a factory method $className(JObject json) where JObject = Map<String, dynamic>';
   }
 
   InstanceMirror intansce = reflected.newInstance(#des, <dynamic>[json]);
+
   return intansce.reflectee as T;
 }

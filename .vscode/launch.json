@@ -1,0 +1,25 @@
+{
+    // Use IntelliSense para saber los atributos posibles.
+    // Mantenga el puntero para ver las descripciones de los existentes atributos.
+    // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Quality (web)",
+            "request": "launch",
+            "type": "dart",
+            "program": "test/",
+            "showMemoryUsage": true,
+            "args": [
+                "-pchrome"
+            ]
+        },
+        {
+            "name": "Quality (native)",
+            "request": "launch",
+            "type": "dart",
+            "showMemoryUsage": true,
+            "program": "test/",
+        }
+    ]
+}

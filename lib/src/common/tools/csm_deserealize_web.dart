@@ -4,5 +4,10 @@ T deserealize<T>(
   JObject json, {
   CSMDecodeInterface<T>? decode,
 }) {
-  throw UnimplementedError();
+  const String excepScope = 'MirrorException';
+  if (decode == null) {
+    throw '$excepScope: On browser platforms is mandatory to provide decode implementation';
+  }
+
+  return decode.decode(json);
 }

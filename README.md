@@ -12,6 +12,7 @@ for flutter applications providing dart tools.
 - Sources handling for development or production alocations.
 - Encoding/Decoding transfer objects (models).
 - Exception and server transaction failure codes handling.
+- Universal deserealization (vm, jsinterop) comptability due interfacing.
 
 ## Getting started
 

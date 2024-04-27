@@ -64,7 +64,8 @@
         
 
 <span class="returntype">T</span>
-<span class="name ">deserealize</span>&lt;<wbr><span class="type-parameter">T</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="deserealize-param-json"><span class="type-annotation"><a href="../csm_foundation_services/JObject.html">JObject</a></span> <span class="parameter-name">json</span></span></li>
+<span class="name ">deserealize</span>&lt;<wbr><span class="type-parameter">T</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="deserealize-param-json"><span class="type-annotation"><a href="../csm_foundation_services/JObject.html">JObject</a></span> <span class="parameter-name">json</span>, </span></li>
+<li><span class="parameter" id="deserealize-param-decode">{<span class="type-annotation"><a href="../csm_foundation_services/CSMDecodeInterface-class.html">CSMDecodeInterface</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span>?</span> <span class="parameter-name">decode</span>}</span></li>
 </ol>)
 
         
@@ -80,17 +81,31 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">T deserealize&lt;T&gt;(JObject json) {
-  String factoryName = &#39;$T.des&#39;;
-  Symbol symbolReference = Symbol(factoryName);
-  ClassMirror reflected = reflectClass(T);
+  <pre class="language-dart"><code class="language-dart">T deserealize&lt;T&gt;(
+  JObject json, {
+  CSMDecodeInterface&lt;T&gt;? decode,
+}) {
+  const String excepScope = &#39;MirrorException&#39;;
 
-  DeclarationMirror? method = reflected.declarations[symbolReference];
+  ClassMirror reflected = reflectClass(T);
+  if (!reflected.hasReflectedType &amp;&amp; decode == null) {
+    throw &#39;$excepScope: Unsupported to deserealize generic classes, for them please provide $CSMDecodeInterface decode implementation&#39;;
+  }
+
+  if (!reflected.hasReflectedType &amp;&amp; decode != null) {
+    return decode.decode(json);
+  }
+
+  String className = reflected.simpleName.toString().split(&#39;&quot;&#39;)[1];
+  Symbol instanceFactory = Symbol(&#39;$className.des&#39;);
+
+  DeclarationMirror? method = reflected.declarations[instanceFactory];
   if (method is! MethodMirror || !(method.isFactoryConstructor)) {
-    throw &#39;MirrorException: Class $T must contain a factory method $factoryName(JObject json) where JObject = Map&lt;String, dynamic&gt;&#39;;
+    throw &#39;: Class $T must contain a factory method $className(JObject json) where JObject = Map&lt;String, dynamic&gt;&#39;;
   }
 
   InstanceMirror intansce = reflected.newInstance(#des, &lt;dynamic&gt;[json]);
+
   return intansce.reflectee as T;
 }</code></pre>
 </section>
@@ -125,7 +140,7 @@
 <footer>
   <span class="no-break">
     csm_foundation_services
-      4.2.3
+      5.0.0
   </span>
 
   
