@@ -48,7 +48,7 @@ extension JUtils on JObject {
     return DateTime.parse(stringValue);
   }
   int _getInt(String key, bool sensitive) {
-    String jValue = _bindProperty(<String>[], '', caseSensitive: sensitive);
+    String jValue = _bindProperty(<String>[key], '', caseSensitive: sensitive);
     if (jValue.isEmpty) throw 'InvalidType: Invalid expected type $Int received an empty';
 
     int? value = int.tryParse(jValue);
