@@ -11,3 +11,7 @@ T deserealize<T>(
 
   return decode.decode(json);
 }
+
+
+const bool native = false;
+const bool browser = true;
