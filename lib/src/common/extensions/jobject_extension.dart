@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:csm_foundation_services/src/common/common_module.dart';
 
 /// Provides utilities to handle jObjects such read and write.
@@ -28,8 +30,46 @@ extension JUtils on JObject {
   }
 
   static JObject get empty => <String, dynamic>{};
-  T bindProp<T>(String key, T defaultValue) => _bindProperty(<String>[key], defaultValue);
-  T bindPropSensitive<T>(String key, T defaultValue) => _bindProperty(<String>[key], defaultValue, caseSensitive: true);
-  T bindPropFallback<T>(List<String> fallback, T defaultValue) => _bindProperty(fallback, defaultValue);
-  T bindPropFallbackSensitive<T>(List<String> fallback, T defaultValue) => _bindProperty(fallback, defaultValue, caseSensitive: true);
+
+  static const List<Type> _supported = <Type>[
+    String,
+    int,
+    DateTime,
+  ];
+
+
+  DateTime _getDateTime(String key, bool sensitive) {
+    String stringValue = _bindProperty(<String>[key], '', caseSensitive: sensitive);
+
+    if (stringValue.isEmpty) {
+      return DateTime(0);
+    }
+
+    return DateTime.parse(stringValue);
+  }
+  int _getInt(String key, bool sensitive) {
+    String jValue = _bindProperty(<String>[], '', caseSensitive: sensitive);
+    if (jValue.isEmpty) throw 'InvalidType: Invalid expected type $Int received an empty';
+
+    int? value = int.tryParse(jValue);
+    if (value == null) throw 'InvalidType: Unable to convert $jValue into expected $Int';
+    return value;
+  }
+
+  T get<T>(String key, {bool sensitive = false}) {
+    if (!_supported.contains(T)) {
+      throw 'Unsupported: This method doesn\'t allow binding for $T';
+    }
+
+    if (T is DateTime) return _getDateTime(key, sensitive) as T;
+    if (T is String) return _bindProperty(<String>[key], '', caseSensitive: sensitive) as T;
+    if (T is int) return _getInt(key, sensitive) as T;
+
+    throw 'CriticalException: Couldn\'t found $T convertion implementation and broke up validations';
+  }
+
+  T getDefault<T>(String key, T defaultValue) => _bindProperty(<String>[key], defaultValue);
+  T getSensitive<T>(String key, T defaultValue) => _bindProperty(<String>[key], defaultValue, caseSensitive: true);
+  T getFallback<T>(List<String> fallback, T defaultValue) => _bindProperty(fallback, defaultValue);
+  T getFallbackSensitive<T>(List<String> fallback, T defaultValue) => _bindProperty(fallback, defaultValue, caseSensitive: true);
 }

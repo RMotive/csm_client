@@ -13,5 +13,5 @@ T deserealize<T>(
 }
 
 
-const bool native = false;
-const bool browser = true;
+const bool nativeDeserealizer = false;
+const bool browserDeserealizer = true;
