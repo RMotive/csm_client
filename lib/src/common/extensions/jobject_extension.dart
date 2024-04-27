@@ -48,11 +48,10 @@ extension JUtils on JObject {
     return DateTime.parse(stringValue);
   }
   int _getInt(String key, bool sensitive) {
-    String jValue = _bindProperty(<String>[key], '', caseSensitive: sensitive);
-    if (jValue.isEmpty) throw 'InvalidType: Invalid expected type $Int received an empty';
-
-    int? value = int.tryParse(jValue);
-    if (value == null) throw 'InvalidType: Unable to convert $jValue into expected $Int';
+    dynamic value = this[key];
+    if (value is! int) {
+      throw 'InvalidType: Unable to convert ${value.runtimeType} into expected $Int';
+    }
     return value;
   }
 
