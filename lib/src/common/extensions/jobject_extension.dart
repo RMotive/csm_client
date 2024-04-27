@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:csm_foundation_services/src/common/common_module.dart';
 
 /// Provides utilities to handle jObjects such read and write.
@@ -50,7 +48,7 @@ extension JUtils on JObject {
   int _getInt(String key, bool sensitive) {
     dynamic value = this[key];
     if (value is! int) {
-      throw 'InvalidType: Unable to convert ${value.runtimeType} into expected $Int';
+      throw 'InvalidType: Unable to convert ${value.runtimeType} into expected $int';
     }
     return value;
   }
