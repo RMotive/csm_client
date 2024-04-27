@@ -33,5 +33,5 @@ T deserealize<T>(
   return intansce.reflectee as T;
 }
 
-const bool native = true;
-const bool browser = false;
+const bool nativeDeserealizer = true;
+const bool browserDeserealizer = false;
