@@ -11,6 +11,8 @@ import 'package:http/http.dart';
 /// [CSMService] concept: is a set of operations where get data by protocol transactions,
 /// like an endpoint. (i.e.) google.com/security <-- service; google.com/security/calculate <-- act, where the operation will be solved with data.
 abstract interface class CSMServiceInterface {
+  static const String authKey = 'CSMAuth'; 
+
   /// The current service network location.
   late final CSMUri endpoint;
 
