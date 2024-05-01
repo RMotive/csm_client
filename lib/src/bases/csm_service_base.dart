@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:csm_foundation_services/src/common/common_module.dart';
 import 'package:csm_foundation_services/src/csm_act_effect.dart';
@@ -46,7 +47,7 @@ abstract class CSMServiceBase implements CSMServiceInterface {
     try {
       headers ??= _kHeaders;
       if (auth != null) {
-        headers[CSMServiceInterface.authKey] = auth;
+        headers[HttpHeaders.authorizationHeader] = '${CSMServiceInterface.authKey} $auth';
       }
 
       JObject jObject = request.encode();
