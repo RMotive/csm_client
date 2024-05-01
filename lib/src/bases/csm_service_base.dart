@@ -21,7 +21,7 @@ abstract class CSMServiceBase implements CSMServiceInterface {
   late final Client comm;
 
   /// Default headers to indicate a standard [JSON] transaction.
-  static const CSMHeaders _kHeaders = <String, String>{
+  static final CSMHeaders _kHeaders = <String, String>{
     "accept-type": 'application/json',
     "content-type": 'application/json',
   };
