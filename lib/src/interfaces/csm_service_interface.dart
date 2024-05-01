@@ -30,6 +30,7 @@ abstract interface class CSMServiceInterface {
   Future<CSMActEffect> post<S, E, M extends CSMEncodeInterface>(
     String act,
     M input, {
+    String? auth,
     CSMHeaders? headers,
   });
 }

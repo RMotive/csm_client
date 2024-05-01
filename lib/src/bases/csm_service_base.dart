@@ -39,14 +39,20 @@ abstract class CSMServiceBase implements CSMServiceInterface {
   Future<CSMActEffect> post<S, E, M extends CSMEncodeInterface>(
     String act,
     M request, {
+    String? auth,
     CSMHeaders? headers,
   }) async {
     Uri uri = endpoint.resolve(endpoint: act);
     try {
+      headers ??= _kHeaders;
+      if (auth != null) {
+        headers[CSMServiceInterface.authKey] = auth;
+      }
+
       JObject jObject = request.encode();
       final Response response = await comm.post(
         uri,
-        headers: headers ?? _kHeaders,
+        headers: headers,
         body: jsonEncode(jObject),
       );
       final JObject parsedBody = jsonDecode(response.body);
