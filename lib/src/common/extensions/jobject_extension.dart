@@ -46,8 +46,8 @@ extension JUtils on JObject {
     return DateTime.parse(stringValue);
   }
   int _getInt(String key, bool sensitive) {
-    dynamic value = this[key];
-    if (value is! int) {
+    int? value = _bindProperty(<String>[key], null, caseSensitive: sensitive);
+    if (value == null) {
       throw 'InvalidType: Unable to convert ${value.runtimeType} into expected $int';
     }
     return value;
