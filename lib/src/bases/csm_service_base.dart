@@ -35,9 +35,9 @@ abstract class CSMServiceBase implements CSMServiceInterface {
     endpoint = CSMUri.includeEndpoint(host, servicePath);
     comm = client ?? Client();
   }
-
+  
   @override
-  Future<CSMActEffect> post<S, E, M extends CSMEncodeInterface>(
+  Future<CSMActEffect> post<M extends CSMEncodeInterface>(
     String act,
     M request, {
     String? auth,
@@ -51,6 +51,35 @@ abstract class CSMServiceBase implements CSMServiceInterface {
       }
 
       JObject jObject = request.encode();
+      final Response response = await comm.post(
+        uri,
+        headers: headers,
+        body: jsonEncode(jObject),
+      );
+      final JObject parsedBody = jsonDecode(response.body);
+      final int statusCode = response.statusCode;
+      if (response.statusCode == 200) return CSMActEffect(success: parsedBody, status: 200);
+      return CSMActEffect(error: parsedBody, status: statusCode);
+    } catch (x, st) {
+      return CSMActEffect(exception: x, trace: st);
+    }
+  }
+
+  @override
+  Future<CSMActEffect> postList<M extends CSMEncodeInterface>(
+    String act,
+    List<M> request, {
+    String? auth,
+    CSMHeaders? headers,
+  }) async {
+    Uri uri = endpoint.resolve(endpoint: act);
+    try {
+      headers ??= _kHeaders;
+      if (auth != null) {
+        headers[HttpHeaders.authorizationHeader] = '${CSMServiceInterface.authKey} $auth';
+      }
+
+      List<JObject> jObject = request.map((M e) => e.encode()).toList();
       final Response response = await comm.post(
         uri,
         headers: headers,

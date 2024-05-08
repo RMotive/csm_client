@@ -24,12 +24,27 @@ abstract interface class CSMServiceInterface {
   ///
   /// [act] - Path segment where the act is inside the service [endpoint] that hosts the set of [act]´s.
   ///
-  /// [input] - The request structured object that stores all the required data by the [act].
+  /// [request] - The request structured object that stores all the required data by the [act].
   ///
   /// [headers] - Optional headers to be sent to the calculated [act] network location.
-  Future<CSMActEffect> post<S, E, M extends CSMEncodeInterface>(
+  Future<CSMActEffect> post<M extends CSMEncodeInterface>(
     String act,
-    M input, {
+    M request, {
+    String? auth,
+    CSMHeaders? headers,
+  });
+
+  /// Performs a [POST] method action via network connection to the specified [endpoint] properties calculated with the
+  /// [act] given location inside the [endpoint] hosting.
+  ///
+  /// [act] - Path segment where the act is inside the service [endpoint] that hosts the set of [act]´s.
+  ///
+  /// [request] - The request list of structured objects that stores all the required data by the [act].
+  ///
+  /// [headers] - Optional headers to be sent to the calculated [act] network location.
+  Future<CSMActEffect> postList<M extends CSMEncodeInterface>(
+    String act,
+    List<M> request, {
     String? auth,
     CSMHeaders? headers,
   });
