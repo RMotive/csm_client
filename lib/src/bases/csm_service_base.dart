@@ -35,7 +35,7 @@ abstract class CSMServiceBase implements CSMServiceInterface {
     endpoint = CSMUri.includeEndpoint(host, servicePath);
     comm = client ?? Client();
   }
-  
+
   @override
   Future<CSMActEffect> post<M extends CSMEncodeInterface>(
     String act,
@@ -79,7 +79,7 @@ abstract class CSMServiceBase implements CSMServiceInterface {
         headers[HttpHeaders.authorizationHeader] = '${CSMServiceInterface.authKey} $auth';
       }
 
-      List<JObject> jObject = request.map((M e) => e.encode()).toList();
+      List<JObject> jObject = request.map<JObject>((M e) => e.encode()).toList();
       final Response response = await comm.post(
         uri,
         headers: headers,
