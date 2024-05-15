@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the host property from the CSMSourceBase class, for the Dart programming language.">
-  <title>host property - CSMSourceBase class - csm_foundation_services library - Dart API</title>
+  <meta name="description" content="API docs for the getFallbackSensitive method from the JUtils extension, for the Dart programming language.">
+  <title>getFallbackSensitive method - JUtils extension - csm_foundation_services library - Dart API</title>
 
 
   
@@ -30,10 +30,10 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">csm_foundation_services</a></li>
     <li><a href="../../csm_foundation_services/csm_foundation_services-library.html">csm_foundation_services.dart</a></li>
-    <li><a href="../../csm_foundation_services/CSMSourceBase-class.html">CSMSourceBase</a></li>
-    <li class="self-crumb">host property</li>
+    <li><a href="../../csm_foundation_services/JUtils.html">JUtils</a></li>
+    <li class="self-crumb">getFallbackSensitive&lt;<wbr><span class="type-parameter">T</span>&gt; method</li>
   </ol>
-  <div class="self-name">host</div>
+  <div class="self-name">getFallbackSensitive</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -54,34 +54,30 @@
   <div
       id="dartdoc-main-content"
       class="main-content"
-      data-above-sidebar="csm_foundation_services&#47;CSMSourceBase-class-sidebar.html"
+      data-above-sidebar="csm_foundation_services&#47;JUtils-extension-sidebar.html"
       data-below-sidebar="">
       <div>
-<h1><span class="kind-property">host</span> property 
+<h1><span class="kind-method">getFallbackSensitive&lt;<wbr><span class="type-parameter">T</span>&gt;</span> method 
 </h1></div>
 
-        <section class="multi-line-signature">
-          
-  <div>
-    <ol class="annotation-list">
-        <li>@<a href="https://api.dart.dev/stable/3.3.4/dart-core/override-constant.html">override</a></li>
-    </ol>
-  </div>
-          <a href="../../csm_foundation_services/CSMUri-class.html">CSMUri</a>
-          <span class="name ">host</span>
-          <div class="features"><span class="feature">late</span><span class="feature">final</span><span class="feature">override-getter</span></div>
+    <section class="multi-line-signature">
+      
 
-        </section>
-        
-<section class="desc markdown">
-  <p>The current runtime calculated host.</p>
-</section>
+<span class="returntype">T</span>
+<span class="name ">getFallbackSensitive</span>&lt;<wbr><span class="type-parameter">T</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="getFallbackSensitive-param-fallback"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.3.4/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.3.4/dart-core/String-class.html">String</a></span>&gt;</span></span> <span class="parameter-name">fallback</span>, </span></li>
+<li><span class="parameter" id="getFallbackSensitive-param-defaultValue"><span class="type-annotation">T</span> <span class="parameter-name">defaultValue</span></span></li>
+</ol>)
 
-        
+      
+
+    </section>
+    
+
+
+    
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">@override
-late final CSMUri host;</code></pre>
+  <pre class="language-dart"><code class="language-dart">T getFallbackSensitive&lt;T&gt;(List&lt;String&gt; fallback, T defaultValue) =&gt; _bindProperty(fallback, defaultValue, caseSensitive: true);</code></pre>
 </section>
 
 
@@ -98,12 +94,12 @@ late final CSMUri host;</code></pre>
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../../index.html">csm_foundation_services</a></li>
     <li><a href="../../csm_foundation_services/csm_foundation_services-library.html">csm_foundation_services</a></li>
-    <li><a href="../../csm_foundation_services/CSMSourceBase-class.html">CSMSourceBase</a></li>
-    <li class="self-crumb">host property</li>
+    <li><a href="../../csm_foundation_services/JUtils.html">JUtils</a></li>
+    <li class="self-crumb">getFallbackSensitive&lt;<wbr><span class="type-parameter">T</span>&gt; method</li>
 </ol>
 
 
-    <h5>CSMSourceBase class</h5>
+    <h5>JUtils extension</h5>
     <div id="dartdoc-sidebar-left-content"></div>
   </div><!--/.sidebar-offcanvas-->
 

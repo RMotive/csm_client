@@ -2,6 +2,14 @@
 
 Common.
 
+## 5.0.1
+
+- Added JObject utils for binding.
+
+        1. Now can be binded [bool] properties.
+        2. Now can be binded [Map<String, dynamic>] properties [{JObject}]
+        3. Now can be binded [List<Map<String, dynamic>>] proeprties [{List<JObject>}]
+
 ## 5.0.0
 
 - Added serialization support along vm and jsinterop platforms where [dart:mirrors] aren´t allowed,

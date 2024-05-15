@@ -31,7 +31,7 @@
     <li><a href="../../index.html">csm_foundation_services</a></li>
     <li><a href="../../csm_foundation_services/csm_foundation_services-library.html">csm_foundation_services.dart</a></li>
     <li><a href="../../csm_foundation_services/CSMServiceInterface-class.html">CSMServiceInterface</a></li>
-    <li class="self-crumb">post&lt;<wbr><span class="type-parameter">S</span>, <span class="type-parameter">E</span>, <span class="type-parameter">M extends CSMEncodeInterface</span>&gt; abstract method</li>
+    <li class="self-crumb">post&lt;<wbr><span class="type-parameter">M extends CSMEncodeInterface</span>&gt; abstract method</li>
   </ol>
   <div class="self-name">post</div>
   <form class="search navbar-right" role="search">
@@ -57,16 +57,17 @@
       data-above-sidebar="csm_foundation_services&#47;CSMServiceInterface-class-sidebar.html"
       data-below-sidebar="">
       <div>
-<h1><span class="kind-method">post&lt;<wbr><span class="type-parameter">S</span>, <span class="type-parameter">E</span>, <span class="type-parameter">M extends CSMEncodeInterface</span>&gt;</span> abstract method 
+<h1><span class="kind-method">post&lt;<wbr><span class="type-parameter">M extends CSMEncodeInterface</span>&gt;</span> abstract method 
 </h1></div>
 
     <section class="multi-line-signature">
       
 
 <span class="returntype"><a href="https://api.dart.dev/stable/3.3.4/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../csm_foundation_services/CSMActEffect-class.html">CSMActEffect</a></span>&gt;</span></span>
-<span class="name ">post</span>&lt;<wbr><span class="type-parameter">S</span>, <span class="type-parameter">E</span>, <span class="type-parameter">M extends CSMEncodeInterface</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="post-param-act"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.3.4/dart-core/String-class.html">String</a></span> <span class="parameter-name">act</span>, </span></li>
-<li><span class="parameter" id="post-param-input"><span class="type-annotation">M</span> <span class="parameter-name">input</span>, </span></li>
-<li><span class="parameter" id="post-param-headers">{<span class="type-annotation"><a href="../../csm_foundation_services/CSMHeaders.html">CSMHeaders</a>?</span> <span class="parameter-name">headers</span>}</span></li>
+<span class="name ">post</span>&lt;<wbr><span class="type-parameter">M extends CSMEncodeInterface</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="post-param-act"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.3.4/dart-core/String-class.html">String</a></span> <span class="parameter-name">act</span>, </span></li>
+<li><span class="parameter" id="post-param-request"><span class="type-annotation">M</span> <span class="parameter-name">request</span>, </span></li>
+<li><span class="parameter" id="post-param-auth">{<span class="type-annotation"><a href="https://api.dart.dev/stable/3.3.4/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">auth</span>, </span></li>
+<li><span class="parameter" id="post-param-headers"><span class="type-annotation"><a href="../../csm_foundation_services/CSMHeaders.html">CSMHeaders</a>?</span> <span class="parameter-name">headers</span>}</span></li>
 </ol>)
 
       
@@ -77,7 +78,7 @@
   <p>Performs a <code>POST</code> method action via network connection to the specified <a href="../../csm_foundation_services/CSMServiceInterface/endpoint.html">endpoint</a> properties calculated with the
 <code>act</code> given location inside the <a href="../../csm_foundation_services/CSMServiceInterface/endpoint.html">endpoint</a> hosting.</p>
 <p><code>act</code> - Path segment where the act is inside the service <a href="../../csm_foundation_services/CSMServiceInterface/endpoint.html">endpoint</a> that hosts the set of <code>act</code>´s.</p>
-<p><code>input</code> - The request structured object that stores all the required data by the <code>act</code>.</p>
+<p><code>request</code> - The request structured object that stores all the required data by the <code>act</code>.</p>
 <p><code>headers</code> - Optional headers to be sent to the calculated <code>act</code> network location.</p>
 </section>
 
@@ -85,9 +86,10 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future&lt;CSMActEffect&gt; post&lt;S, E, M extends CSMEncodeInterface&gt;(
+  <pre class="language-dart"><code class="language-dart">Future&lt;CSMActEffect&gt; post&lt;M extends CSMEncodeInterface&gt;(
   String act,
-  M input, {
+  M request, {
+  String? auth,
   CSMHeaders? headers,
 });</code></pre>
 </section>
@@ -107,7 +109,7 @@
     <li><a href="../../index.html">csm_foundation_services</a></li>
     <li><a href="../../csm_foundation_services/csm_foundation_services-library.html">csm_foundation_services</a></li>
     <li><a href="../../csm_foundation_services/CSMServiceInterface-class.html">CSMServiceInterface</a></li>
-    <li class="self-crumb">post&lt;<wbr><span class="type-parameter">S</span>, <span class="type-parameter">E</span>, <span class="type-parameter">M extends CSMEncodeInterface</span>&gt; abstract method</li>
+    <li class="self-crumb">post&lt;<wbr><span class="type-parameter">M extends CSMEncodeInterface</span>&gt; abstract method</li>
 </ol>
 
 
@@ -123,7 +125,7 @@
 <footer>
   <span class="no-break">
     csm_foundation_services
-      5.0.0
+      5.0.1
   </span>
 
   

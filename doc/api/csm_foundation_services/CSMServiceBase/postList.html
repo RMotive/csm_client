@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the post method from the CSMServiceBase class, for the Dart programming language.">
-  <title>post method - CSMServiceBase class - csm_foundation_services library - Dart API</title>
+  <meta name="description" content="API docs for the postList method from the CSMServiceBase class, for the Dart programming language.">
+  <title>postList method - CSMServiceBase class - csm_foundation_services library - Dart API</title>
 
 
   
@@ -31,9 +31,9 @@
     <li><a href="../../index.html">csm_foundation_services</a></li>
     <li><a href="../../csm_foundation_services/csm_foundation_services-library.html">csm_foundation_services.dart</a></li>
     <li><a href="../../csm_foundation_services/CSMServiceBase-class.html">CSMServiceBase</a></li>
-    <li class="self-crumb">post&lt;<wbr><span class="type-parameter">M extends CSMEncodeInterface</span>&gt; method</li>
+    <li class="self-crumb">postList&lt;<wbr><span class="type-parameter">M extends CSMEncodeInterface</span>&gt; method</li>
   </ol>
-  <div class="self-name">post</div>
+  <div class="self-name">postList</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -57,7 +57,7 @@
       data-above-sidebar="csm_foundation_services&#47;CSMServiceBase-class-sidebar.html"
       data-below-sidebar="">
       <div>
-<h1><span class="kind-method">post&lt;<wbr><span class="type-parameter">M extends CSMEncodeInterface</span>&gt;</span> method 
+<h1><span class="kind-method">postList&lt;<wbr><span class="type-parameter">M extends CSMEncodeInterface</span>&gt;</span> method 
 </h1></div>
 
     <section class="multi-line-signature">
@@ -69,10 +69,10 @@
   </div>
 
 <span class="returntype"><a href="https://api.dart.dev/stable/3.3.4/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../csm_foundation_services/CSMActEffect-class.html">CSMActEffect</a></span>&gt;</span></span>
-<span class="name ">post</span>&lt;<wbr><span class="type-parameter">M extends CSMEncodeInterface</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="post-param-act"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.3.4/dart-core/String-class.html">String</a></span> <span class="parameter-name">act</span>, </span></li>
-<li><span class="parameter" id="post-param-request"><span class="type-annotation">M</span> <span class="parameter-name">request</span>, </span></li>
-<li><span class="parameter" id="post-param-auth">{<span class="type-annotation"><a href="https://api.dart.dev/stable/3.3.4/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">auth</span>, </span></li>
-<li><span class="parameter" id="post-param-headers"><span class="type-annotation"><a href="../../csm_foundation_services/CSMHeaders.html">CSMHeaders</a>?</span> <span class="parameter-name">headers</span>}</span></li>
+<span class="name ">postList</span>&lt;<wbr><span class="type-parameter">M extends CSMEncodeInterface</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="postList-param-act"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.3.4/dart-core/String-class.html">String</a></span> <span class="parameter-name">act</span>, </span></li>
+<li><span class="parameter" id="postList-param-request"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.3.4/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter">M</span>&gt;</span></span> <span class="parameter-name">request</span>, </span></li>
+<li><span class="parameter" id="postList-param-auth">{<span class="type-annotation"><a href="https://api.dart.dev/stable/3.3.4/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">auth</span>, </span></li>
+<li><span class="parameter" id="postList-param-headers"><span class="type-annotation"><a href="../../csm_foundation_services/CSMHeaders.html">CSMHeaders</a>?</span> <span class="parameter-name">headers</span>}</span></li>
 </ol>)
 
       <div class="features"><span class="feature">override</span></div>
@@ -83,7 +83,7 @@
   <p>Performs a <code>POST</code> method action via network connection to the specified <a href="../../csm_foundation_services/CSMServiceBase/endpoint.html">endpoint</a> properties calculated with the
 <code>act</code> given location inside the <a href="../../csm_foundation_services/CSMServiceBase/endpoint.html">endpoint</a> hosting.</p>
 <p><code>act</code> - Path segment where the act is inside the service <a href="../../csm_foundation_services/CSMServiceBase/endpoint.html">endpoint</a> that hosts the set of <code>act</code>´s.</p>
-<p><code>request</code> - The request structured object that stores all the required data by the <code>act</code>.</p>
+<p><code>request</code> - The request list of structured objects that stores all the required data by the <code>act</code>.</p>
 <p><code>headers</code> - Optional headers to be sent to the calculated <code>act</code> network location.</p>
 </section>
 
@@ -92,9 +92,9 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-Future&lt;CSMActEffect&gt; post&lt;M extends CSMEncodeInterface&gt;(
+Future&lt;CSMActEffect&gt; postList&lt;M extends CSMEncodeInterface&gt;(
   String act,
-  M request, {
+  List&lt;M&gt; request, {
   String? auth,
   CSMHeaders? headers,
 }) async {
@@ -105,7 +105,7 @@ Future&lt;CSMActEffect&gt; post&lt;M extends CSMEncodeInterface&gt;(
       headers[HttpHeaders.authorizationHeader] = &#39;${CSMServiceInterface.authKey} $auth&#39;;
     }
 
-    JObject jObject = request.encode();
+    List&lt;JObject&gt; jObject = request.map&lt;JObject&gt;((M e) =&gt; e.encode()).toList();
     final Response response = await comm.post(
       uri,
       headers: headers,
@@ -136,7 +136,7 @@ Future&lt;CSMActEffect&gt; post&lt;M extends CSMEncodeInterface&gt;(
     <li><a href="../../index.html">csm_foundation_services</a></li>
     <li><a href="../../csm_foundation_services/csm_foundation_services-library.html">csm_foundation_services</a></li>
     <li><a href="../../csm_foundation_services/CSMServiceBase-class.html">CSMServiceBase</a></li>
-    <li class="self-crumb">post&lt;<wbr><span class="type-parameter">M extends CSMEncodeInterface</span>&gt; method</li>
+    <li class="self-crumb">postList&lt;<wbr><span class="type-parameter">M extends CSMEncodeInterface</span>&gt; method</li>
 </ol>
 
 

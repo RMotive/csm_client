@@ -33,6 +33,7 @@ extension JUtils on JObject {
     String,
     int,
     DateTime,
+    bool,
     Map<String, dynamic>,
     List<Map<String, dynamic>>,
   ];
@@ -70,8 +71,9 @@ extension JUtils on JObject {
     if (T == DateTime) return _getDateTime(key, sensitive) as T;
     if (T == String) return _bindProperty(<String>[key], '', caseSensitive: sensitive) as T;
     if (T == int) return _getInt(key, sensitive) as T;
-    if (T == Map<String, dynamic>) return _bindProperty(<String>[key], <String, dynamic>{} as T);
+    if (T == Map<String, dynamic>) return _bindProperty(<String>[key], <String, dynamic>{} as T, caseSensitive: sensitive);
     if (T == List<Map<String, dynamic>>) return _getListMapStringDynamic(key, sensitive) as T;
+    if (T == bool) return _bindProperty(<String>[key], false as T, caseSensitive: sensitive);
 
     throw 'CriticalException: Couldn\'t found $T convertion implementation and broke up validations';
   }
