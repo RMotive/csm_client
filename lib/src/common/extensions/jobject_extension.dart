@@ -54,6 +54,12 @@ extension JUtils on JObject {
     }
     return value;
   }
+  List<JObject> _getListMapStringDynamic(String key, bool sensitive) {
+    List<dynamic> bindedList = _bindProperty(<String>[key], <Map<String, dynamic>>[]);
+    List<JObject> castList = bindedList.cast<JObject>();
+
+    return castList;
+  }
 
   T get<T>(String key, {bool sensitive = false}) {
     if (!_supported.contains(T)) {
@@ -65,7 +71,7 @@ extension JUtils on JObject {
     if (T == String) return _bindProperty(<String>[key], '', caseSensitive: sensitive) as T;
     if (T == int) return _getInt(key, sensitive) as T;
     if (T == Map<String, dynamic>) return _bindProperty(<String>[key], <String, dynamic>{} as T);
-    if (T == List<Map<String, dynamic>>) return _bindProperty(<String>[key], <Map<String, dynamic>>[] as T);
+    if (T == List<Map<String, dynamic>>) return _getListMapStringDynamic(key, sensitive) as T;
 
     throw 'CriticalException: Couldn\'t found $T convertion implementation and broke up validations';
   }
