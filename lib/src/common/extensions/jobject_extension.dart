@@ -33,6 +33,7 @@ extension JUtils on JObject {
     String,
     int,
     DateTime,
+    Map<String, dynamic>
   ];
 
 
@@ -58,9 +59,11 @@ extension JUtils on JObject {
       throw 'Unsupported: This method doesn\'t allow binding for $T';
     }
 
+
     if (T == DateTime) return _getDateTime(key, sensitive) as T;
     if (T == String) return _bindProperty(<String>[key], '', caseSensitive: sensitive) as T;
     if (T == int) return _getInt(key, sensitive) as T;
+    if (T == Map<String, dynamic>) return _bindProperty(<String>[key], <String, dynamic>{} as T);
 
     throw 'CriticalException: Couldn\'t found $T convertion implementation and broke up validations';
   }
