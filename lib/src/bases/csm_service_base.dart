@@ -20,6 +20,9 @@ abstract class CSMServiceBase implements CSMServiceInterface {
   @override
   late final Client comm;
 
+  @override
+  late final CSMHeaders headers;
+
   /// Default headers to indicate a standard [JSON] transaction.
   static final CSMHeaders _kHeaders = <String, String>{
     "accept-type": 'application/json',
@@ -31,9 +34,15 @@ abstract class CSMServiceBase implements CSMServiceInterface {
     CSMUri host,
     String servicePath, {
     Client? client,
+    CSMHeaders? headers,
   }) {
     endpoint = CSMUri.includeEndpoint(host, servicePath);
     comm = client ?? Client();
+    this.headers = <String, String>{};
+    this.headers.addAll(_kHeaders);
+    if (headers != null) {
+      this.headers.addAll(headers);
+    }
   }
 
   @override
@@ -45,7 +54,13 @@ abstract class CSMServiceBase implements CSMServiceInterface {
   }) async {
     Uri uri = endpoint.resolve(endpoint: act);
     try {
-      headers ??= _kHeaders;
+      if (headers == null) {
+        headers = this.headers;
+      } else {
+        headers.addAll(this.headers);
+      }
+
+
       if (auth != null) {
         headers[HttpHeaders.authorizationHeader] = '${CSMServiceInterface.authKey} $auth';
       }
@@ -62,7 +77,7 @@ abstract class CSMServiceBase implements CSMServiceInterface {
       return CSMActEffect(error: parsedBody, status: statusCode);
     } catch (x, st) {
       return CSMActEffect(exception: x, trace: st);
-    }
+    } 
   }
 
   @override
@@ -74,7 +89,11 @@ abstract class CSMServiceBase implements CSMServiceInterface {
   }) async {
     Uri uri = endpoint.resolve(endpoint: act);
     try {
-      headers ??= _kHeaders;
+      if (headers == null) {
+        headers = this.headers;
+      } else {
+        headers.addAll(this.headers);
+      }
       if (auth != null) {
         headers[HttpHeaders.authorizationHeader] = '${CSMServiceInterface.authKey} $auth';
       }

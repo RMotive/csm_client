@@ -19,6 +19,9 @@ abstract interface class CSMServiceInterface {
   /// The current service network connection communicator provider.
   late final Client comm;
 
+  /// Default headers subscribed to all actions.
+  late final CSMHeaders headers;
+
   /// Performs a [POST] method action via network connection to the specified [endpoint] properties calculated with the
   /// [act] given location inside the [endpoint] hosting.
   ///
