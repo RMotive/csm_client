@@ -16,5 +16,7 @@ export 'src/common/common_module.dart';
 export 'src/csm_act_effect.dart';
 // --> Interfaces module
 export 'src/interfaces/interfaces_module.dart';
+// --> Migrations module
+export 'src/migrations/migrations_module.dart';
 // --> Models module
 export 'src/models/models_module.dart';
