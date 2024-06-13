@@ -1,4 +1,6 @@
 @TestOn('browser')
+library;
+
 
 import 'package:csm_foundation_services/csm_foundation_services.dart';
 import 'package:test/test.dart';

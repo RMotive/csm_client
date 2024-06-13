@@ -1,6 +1,17 @@
 # Changelog
 
-Common.
+Changelog history for [csm_foundation_services] package.
+
+## 5.1.0
+
+- Added [MIgration] CSM products internal concept objects handling, including:
+
+        1. [CSMSetInterface]: That represents a [Migration] set definition.
+        2. [CSMSetValidationResult]: Structure that stores a set property validation error result.
+
+- Additional:
+
+        1. Upgraded [lints] from (3.0.0) to (4.0.0).
 
 ## 5.0.1
 
