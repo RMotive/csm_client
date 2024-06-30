@@ -1,5 +1,4 @@
 import 'package:csm_foundation_services/csm_foundation_services.dart';
-import 'package:csm_foundation_services/src/migrations/structures/csm_set_validation_result.dart';
 
 /// Defines a [Migration] internal product concept interface to define
 /// base requirements for [Set] implementations and definitions.

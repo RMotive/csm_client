@@ -1,12 +1,11 @@
 @TestOn('browser')
 library;
 
-
 import 'package:csm_foundation_services/csm_foundation_services.dart';
 import 'package:test/test.dart';
 
-import '../../shared/mocks/mock_class.dart';
-import '../../shared/mocks/mock_class_generic.dart';
+import '../../../shared/mocks/mock_class.dart';
+import '../../../shared/mocks/mock_class_generic.dart';
 
 void main() {
   late JObject mock;

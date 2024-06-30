@@ -2,6 +2,22 @@
 
 Changelog history for [csm_foundation_services] package.
 
+## 6.0.0
+
+- Modified naming convention for extension files.
+
+        1. Now files starts with csm as another files.
+        2. Now have the name of the native type extended and the extension word.
+
+- Documentation improvements for extensions.
+
+- Dependencies upgrade:
+
+        1. collection ([1.18.0] -> [1.19.0])
+        2. http_parser ([4.0.2] -> [4.1.0])
+        3. shelf ([1.4.1] -> [1.4.2])
+        4. vm_service ([14.2.3] -> [14.2.4]) 
+
 ## 5.1.0
 
 - Added [MIgration] CSM products internal concept objects handling, including:

@@ -3,7 +3,7 @@ import 'dart:typed_data';
 /// Extension class.
 ///
 /// Adds extended and custom methods for String data type.
-extension StringExtension on String {
+extension CSMStringExtension on String {
   /// Calculates and returns if the current [String] starts with uppercase.
   bool get startUppercase {
     final String startLetter = substring(0, 1);
