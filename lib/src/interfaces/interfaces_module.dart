@@ -1,5 +1,4 @@
 export 'csm_act_effect_interface.dart';
-export 'csm_decode_interface.dart';
 export 'csm_encode_interface.dart';
 export 'csm_service_interface.dart';
 export 'csm_service_resolver_interface.dart';

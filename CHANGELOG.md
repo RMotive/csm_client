@@ -1,6 +1,15 @@
 # Changelog
 
-Changelog history for [csm_foundation_services] package.
+Changelog history for [csm_client] package.
+
+## 7.1.0 - [24.09-2024]
+
+- Notes:
+
+        1. [removed] CSMDecodeInterface due to is not necessary anymore, moved to callback factory.
+        2. [deprecated] [deserealize] function native/web implementations due to the previous movement from [CSMDecodeInterface]'s to callback factories. 
+
+- Dependencies: N/A
 
 ## 6.0.0
 

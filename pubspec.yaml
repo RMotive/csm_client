@@ -1,8 +1,8 @@
-name: csm_foundation_services
-description: A csm foundation package to services implementations.
-version: 6.0.0
+name: csm_client
+description: A CSM package to client implementations.
+version: 7.0.0
 publish_to: none
-repository: https://github.com/my_org/my_repo
+repository: https://github.com/RMotive/csm_client
 
 environment:
   sdk: ^3.3.3

@@ -1,7 +1,7 @@
-import 'package:csm_foundation_services/src/common/common_module.dart';
-import 'package:csm_foundation_services/src/csm_act_effect.dart';
-import 'package:csm_foundation_services/src/interfaces/csm_encode_interface.dart';
-import 'package:csm_foundation_services/src/models/models_module.dart';
+import 'package:csm_client/src/common/common_module.dart';
+import 'package:csm_client/src/csm_act_effect.dart';
+import 'package:csm_client/src/interfaces/csm_encode_interface.dart';
+import 'package:csm_client/src/models/models_module.dart';
 import 'package:http/http.dart';
 
 /// Interface for [CSMService].
