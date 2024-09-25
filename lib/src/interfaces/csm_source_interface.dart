@@ -1,4 +1,4 @@
-import 'package:csm_foundation_services/src/models/models_module.dart';
+import 'package:csm_client/src/models/models_module.dart';
 import 'package:http/http.dart';
 
 /// Interface for [CSMRepository].

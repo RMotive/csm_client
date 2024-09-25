@@ -1,4 +1,4 @@
-import 'package:csm_foundation_services/src/common/common_module.dart';
+import 'package:csm_client/src/common/common_module.dart';
 
 /// Provides [CSM] utilities to handle [JObject] concept enhancement.
 extension CSMJObjectExtension on JObject {
