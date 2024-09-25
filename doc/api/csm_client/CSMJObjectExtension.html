@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the CSMJObjectExtension extension from the csm_client library, for the Dart programming language.">
+  <title>CSMJObjectExtension extension - csm_client library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">csm_client</a></li>
+    <li><a href="../csm_client/csm_client-library.html">csm_client.dart</a></li>
+    <li class="self-crumb">CSMJObjectExtension extension</li>
+  </ol>
+  <div class="self-name">CSMJObjectExtension</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button" title="Toggle brightness">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        dark_mode
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        light_mode
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar="csm_client&#47;csm_client-library-sidebar.html"
+    data-below-sidebar="csm_client&#47;CSMJObjectExtension-extension-sidebar.html">
+    <div>
+<h1><span class="kind-class">CSMJObjectExtension</span> extension 
+ 
+</h1></div>
+
+    
+<section class="desc markdown">
+  <p>Provides <code>CSM</code> utilities to handle <a href="../csm_client/JObject.html">JObject</a> concept enhancement.</p>
+</section>
+
+    <section>
+      <dl class="dl-horizontal">
+        <dt>on</dt>
+        <dd>
+          <ul class="comma-separated clazz-relationships">
+              <li><a href="../csm_client/JObject.html">JObject</a></li>
+          </ul>
+        </dd>
+      </dl>
+      
+
+
+    </section>
+
+    
+    
+  <section
+      class="summary offset-anchor"
+      id="instance-methods">
+    <h2>Methods</h2>
+    <dl class="callables">
+        <dt id="get" class="callable">
+  <span class="name"><a href="../csm_client/CSMJObjectExtension/get.html">get</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="get-param-key"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.3/dart-core/String-class.html">String</a></span> <span class="parameter-name">key</span>, {</span><span class="parameter" id="get-param-sensitive"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.3/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">sensitive</span> = <span class="default-value">false</span></span>})
+    <span class="returntype parameter">&#8594; T</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Specifies a property value binding strict, this means if the requested <code>T</code> doesn't match the binded
+<a href="https://api.dart.dev/stable/3.5.3/dart-core/Type-class.html">Type</a> then'll throw an exception.
+  
+
+</dd>
+
+        <dt id="getDefault" class="callable">
+  <span class="name"><a href="../csm_client/CSMJObjectExtension/getDefault.html">getDefault</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="getDefault-param-key"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.3/dart-core/String-class.html">String</a></span> <span class="parameter-name">key</span>, </span><span class="parameter" id="getDefault-param-defaultValue"><span class="type-annotation">T</span> <span class="parameter-name">defaultValue</span></span>)
+    <span class="returntype parameter">&#8594; T</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Get a property value Specified by <code>key</code> not strict by casing, but if the bind fails will return <code>defaultValue</code>.
+can fail by the property wasn't found or the cast failed.
+  
+
+</dd>
+
+        <dt id="getFallback" class="callable">
+  <span class="name"><a href="../csm_client/CSMJObjectExtension/getFallback.html">getFallback</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="getFallback-param-fallback"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.3/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.5.3/dart-core/String-class.html">String</a></span>&gt;</span></span> <span class="parameter-name">fallback</span>, </span><span class="parameter" id="getFallback-param-defaultValue"><span class="type-annotation">T</span> <span class="parameter-name">defaultValue</span></span>)
+    <span class="returntype parameter">&#8594; T</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Get a property value Specified by a <a href="https://api.dart.dev/stable/3.5.3/dart-core/List-class.html">List</a> of <code>key</code> no strict by string casing, will return the first
+proeprty key the binder finds, but if the bind fails will return <code>defaultValue</code>.
+can fail by the property wasn't found or the cast failed.
+  
+
+</dd>
+
+        <dt id="getFallbackSensitive" class="callable">
+  <span class="name"><a href="../csm_client/CSMJObjectExtension/getFallbackSensitive.html">getFallbackSensitive</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="getFallbackSensitive-param-fallback"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.3/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.5.3/dart-core/String-class.html">String</a></span>&gt;</span></span> <span class="parameter-name">fallback</span>, </span><span class="parameter" id="getFallbackSensitive-param-defaultValue"><span class="type-annotation">T</span> <span class="parameter-name">defaultValue</span></span>)
+    <span class="returntype parameter">&#8594; T</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Get a property value Specified by a <a href="https://api.dart.dev/stable/3.5.3/dart-core/List-class.html">List</a> of <code>key</code> strict by string casing, will return the first
+proeprty key the binder finds, but if the bind fails will return <code>defaultValue</code>.
+can fail by the property wasn't found or the cast failed.
+  
+
+</dd>
+
+        <dt id="getList" class="callable">
+  <span class="name"><a href="../csm_client/CSMJObjectExtension/getList.html">getList</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="getList-param-key"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.3/dart-core/String-class.html">String</a></span> <span class="parameter-name">key</span>, {</span><span class="parameter" id="getList-param-sensitive"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.3/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">sensitive</span> = <span class="default-value">false</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.5.3/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Specifies a property value binding strict for <a href="https://api.dart.dev/stable/3.5.3/dart-core/List-class.html">List</a> of <code>T</code>, if the direct cast fails will try to cast
+each value of the <a href="https://api.dart.dev/stable/3.5.3/dart-core/List-class.html">List</a> binded, if the element cast fails will ignore it, by default if everything fails will
+return an empty <a href="https://api.dart.dev/stable/3.5.3/dart-core/List-class.html">List</a>.
+  
+
+</dd>
+
+        <dt id="getSensitive" class="callable">
+  <span class="name"><a href="../csm_client/CSMJObjectExtension/getSensitive.html">getSensitive</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="getSensitive-param-key"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.3/dart-core/String-class.html">String</a></span> <span class="parameter-name">key</span>, </span><span class="parameter" id="getSensitive-param-defaultValue"><span class="type-annotation">T</span> <span class="parameter-name">defaultValue</span></span>)
+    <span class="returntype parameter">&#8594; T</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Get a property value Specified by <code>key</code> strict by string casing, but if the bind fails will return <code>defaultValue</code>.
+can fail by the property wasn't found or the cast failed.
+  
+
+</dd>
+
+    </dl>
+  </section>
+    
+    
+    
+    
+
+
+</div> <!-- /.main-content -->
+
+<div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+  <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">csm_client</a></li>
+    <li><a href="../csm_client/csm_client-library.html">csm_client</a></li>
+    <li class="self-crumb">CSMJObjectExtension extension</li>
+</ol>
+
+
+  <h5>csm_client library</h5>
+  <div id="dartdoc-sidebar-left-content"></div>
+</div>
+
+<div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+</div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    csm_client
+      7.0.0
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+
+
+

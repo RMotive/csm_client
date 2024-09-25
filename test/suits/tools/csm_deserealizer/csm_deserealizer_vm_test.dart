@@ -1,7 +1,7 @@
 @TestOn('vm')
 library;
 
-import 'package:csm_foundation_services/csm_foundation_services.dart';
+import 'package:csm_client/csm_client.dart';
 import 'package:test/test.dart';
 
 import '../../../shared/mocks/mock_class_generic.dart';
@@ -20,7 +20,7 @@ void main() {
   test(
     '(Native) Deserealize',
     () async {
-      MockClass fact = deserealize(mock);
+      MockClass fact = MockClass.des(mock);
 
       expect(fact.first, mock['first']);
     },
@@ -29,12 +29,8 @@ void main() {
   test(
     '(Native) Deserealize with generics',
     () async {
-      MockClassGenericDecode<MockClass> decoder = MockClassGenericDecode<MockClass>(MockClassDecode());
 
-      MockClassGeneric<MockClass> fact = deserealize<MockClassGeneric<MockClass>>(
-        mock,
-        decode: decoder,
-      );
+      MockClassGeneric<MockClass> fact = MockClassGeneric<MockClass>.des(mock, MockClass.des);
 
       expect(fact.first, mock['first']);
     },
@@ -48,12 +44,5 @@ final class MockClass {
 
   factory MockClass.des(JObject json) {
     return MockClass(json['first']);
-  }
-}
-
-final class MockClassDecode implements CSMDecodeInterface<MockClass> {
-  @override
-  MockClass decode(JObject json) {
-    return MockClass.des(json);
   }
 }

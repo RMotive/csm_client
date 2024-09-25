@@ -1,15 +1,16 @@
-import 'package:csm_foundation_services/csm_foundation_services.dart';
+import 'package:csm_client/csm_client.dart';
 
+@Deprecated("No longer needed since decodes were moved to functions")
 T deserealize<T>(
   JObject json, {
-  CSMDecodeInterface<T>? decode,
+  T Function(JObject json)? decode,
 }) {
   const String excepScope = 'MirrorException';
   if (decode == null) {
     throw '$excepScope: On browser platforms is mandatory to provide decode implementation';
   }
 
-  return decode.decode(json);
+  return decode(json);
 }
 
 

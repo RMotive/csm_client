@@ -1,23 +1,24 @@
 import 'dart:mirrors';
 
-import 'package:csm_foundation_services/csm_foundation_services.dart';
+import 'package:csm_client/csm_client.dart';
 
 /// Deserealizes the given generic class [T] based on its own [des] method, passing [json] object.
 ///
 /// Can throw [MirrorException].
+@Deprecated("No longer needed since decodes were moved to functions")
 T deserealize<T>(
   JObject json, {
-  CSMDecodeInterface<T>? decode,
+  T Function(JObject json)? decode,
 }) {
   const String excepScope = 'MirrorException';
 
   ClassMirror reflected = reflectClass(T);
   if (!reflected.hasReflectedType && decode == null) {
-    throw '$excepScope: Unsupported to deserealize generic classes, for them please provide $CSMDecodeInterface decode implementation';
+    throw '$excepScope: Unsupported to deserealize generic classes, for them please provide [$T Function(JObject) json] decode implementation';
   }
 
   if (!reflected.hasReflectedType && decode != null) {
-    return decode.decode(json);
+    return decode(json);
   }
 
   String className = reflected.simpleName.toString().split('"')[1];

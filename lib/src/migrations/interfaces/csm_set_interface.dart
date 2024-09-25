@@ -1,4 +1,4 @@
-import 'package:csm_foundation_services/csm_foundation_services.dart';
+import 'package:csm_client/csm_client.dart';
 
 /// Defines a [Migration] internal product concept interface to define
 /// base requirements for [Set] implementations and definitions.

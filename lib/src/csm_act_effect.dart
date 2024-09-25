@@ -1,4 +1,4 @@
-import 'package:csm_foundation_services/src/bases/bases_module.dart';
+import 'package:csm_client/src/bases/bases_module.dart';
 
 /// Class for [CSMActEffect].
 ///
