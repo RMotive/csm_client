@@ -2,7 +2,7 @@
 
 Changelog history for [csm_client] package.
 
-## 7.1.0 - [24.09-2024]
+## 7.0.0 - [24.09-2024]
 
 - Notes:
 
