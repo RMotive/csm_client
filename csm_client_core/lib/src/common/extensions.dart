@@ -216,7 +216,7 @@ extension DataMapExtension on DataMap {
     }
 
     try {
-      cacheList = (rawList as List<T>);
+      cacheList = (rawList as List<dynamic>).cast<T>();
       return cacheList;
     } catch (exception) {
       late final List<Object?> castedObjectList;
@@ -224,7 +224,7 @@ extension DataMapExtension on DataMap {
       try {
         castedObjectList = rawList as List<Object?>;
       } catch (exception) {
-        throw TracedException('Unsupported data type casting for ($T)');
+        throw TracedException('Unsupported data type casting for ($T)');    
       }
 
       cacheList = <T>[];
